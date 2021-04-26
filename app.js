@@ -33,9 +33,19 @@ let apiUrl =
 function showMyTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = `${temperature}`;
+  mainTemp.innerHTML = `${temperature}°F`;
 }
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showMyTemperature);
+
+//my weather description
+let descriptionURL =
+  "https://api.openweathermap.org/data/2.5/weather?q=Phoenix&units=imperial&appid=974867647183f192d10e0478c4341263";
+function showDescription(response) {
+  let description = response.data.weather[0].main;
+  let weatherDescription = document.querySelector("#weather-description");
+  weatherDescription.innerHTML = description;
+}
+axios.get(descriptionURL).then(showDescription);
 
 //search box form
 function searchForCity(event) {
@@ -51,7 +61,7 @@ function displayWeatherData(response) {
   let searchedCity = document.querySelector("#city-text");
   let currentTemp = document.querySelector("#main-temp");
   let temperature = Math.round(response.data.main.temp);
-  currentTemp.innerHTML = temperature;
+  currentTemp.innerHTML = `${temperature}°F`;
   let city = response.data.name;
   searchedCity.innerHTML = `${city.trim()}`;
   let dateElement = document.querySelector("#date-text");

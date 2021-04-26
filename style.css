@@ -21,7 +21,7 @@ input {
   border-radius: 30px;
   padding: 10px 15px;
   font-family: "Open Sans Condensed", sans-serif;
-  width: 350px;
+  width: 550px;
 }
 footer {
   font-family: "Open Sans Condensed", sans-serif;
@@ -43,7 +43,6 @@ ul {
 }
 .search-box {
   text-align: right;
-  margin-top: 30px;
 }
 
 .main-temp {
@@ -51,24 +50,22 @@ ul {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 70px;
   font-weight: bold;
-  padding: 0;
 }
 .main-weather-icon {
   font-size: 70px;
   color: #364547;
-  padding: 0px 0px;
 }
 .other-text {
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 18px;
-  text-align: center;
+  font-size: 22px;
+  text-align: right;
   color: #364547;
-  margin-top: 10px;
+  margin-top: 18px;
   transition: all 300ms ease-in-out;
 }
-.other-text:hover {
+/*.other-text:hover {
   color: #979797;
-}
+}*/
 .phoenix-text {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 40px;
@@ -93,7 +90,8 @@ ul {
   color: #364547;
   font-size: 50px;
 }
-#date-text {
+#date-text,
+#weather-description {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
 }

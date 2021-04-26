@@ -29,13 +29,8 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-1 main-weather-icon">
-          <i class="fas fa-sun main-weather-icon"></i>
-        </div>
-        <div class="col-2 main-temp" id="main-temp">91°</div>
-
         <!--search box div-->
-        <div class="col-9 search-box">
+        <div class="col-12 search-box">
           <form id="search-box-form">
             <input
               type="text"
@@ -49,28 +44,48 @@
       </div>
 
       <div class="row">
-        <div class="col-5 phoenix-text">
+        <!--text on left side-->
+        <div class="col-4 phoenix-text">
           <ul>
             <li id="city-text">Phoenix</li>
             <li id="date-text">
               <span class="date-time-text">Tuesday 16:00</span>
             </li>
+            <li id="weather-description">Weather Description</li>
           </ul>
         </div>
+        <!--weather icon with temp-->
+        <div class="col-1 main-weather-icon">
+          <i class="fas fa-sun main-weather-icon"></i>
+        </div>
+        <div class="col-3 main-temp" id="main-temp">91<span>°C | °F</span></div>
+        <!--other text on right side-->
+        <div class="col-4 other-text">
+          <ul>
+            <li>Precipitation: 0%</li>
+            <li>Humidity: 21%</li>
+            <li>Wind: 12 mph</li>
+          </ul>
+        </div>
+      </div>
 
-        <div class="col-2 other-text" id="precipitation">
+      <!--Other text, precipitation, wind, humidity-->
+      <!-- 
+      <div class="row">
+         
+          <div class="col-4 other-text" id="precipitation">
           Precipitation:<br />
           0%
         </div>
-        <div class="col-2 other-text">
+        <div class="col-4 other-text">
           Humidity:<br />
           21%
         </div>
-        <div class="col-2 other-text">
+        <div class="col-4 other-text">
           Wind:<br />
           12 mph
-        </div>
-      </div>
+        </div></div>
+      -->
 
       <div class="row">
         <!--Weather box divs-->
