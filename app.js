@@ -1,6 +1,6 @@
 //Time Display
-function displayDateTime(timestamp) {
-  let date = new Date(timestamp);
+function displayDateTime(now) {
+  let date = new Date();
   let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
@@ -25,6 +25,18 @@ let dateElement = document.querySelector("#date-text");
 let now = new Date();
 dateElement.innerHTML = displayDateTime(now);
 
+//current temp display
+let apiKey = "974867647183f192d10e0478c4341263";
+let apiUrl =
+  "https://api.openweathermap.org/data/2.5/weather?q=Phoenix&units=imperial";
+
+function showMyTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let mainTemp = document.querySelector("#main-temp");
+  mainTemp.innerHTML = `${temperature}`;
+}
+axios.get(`${apiUrl}&appid=${apiKey}`).then(showMyTemperature);
+
 //search box form
 function searchForCity(event) {
   event.preventDefault();
@@ -36,7 +48,6 @@ function searchForCity(event) {
 }
 //display weather update
 function displayWeatherData(response) {
-  //event.preventDefault();
   let searchedCity = document.querySelector("#city-text");
   let currentTemp = document.querySelector("#main-temp");
   let temperature = Math.round(response.data.main.temp);
