@@ -33,7 +33,9 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${myCity}&units=
 function showMyData(response) {
   let temperature = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = `${temperature}°F`;
+  mainTemp.innerHTML = `${temperature}`;
+
+  farhenheitTemp = Math.round(response.data.main.temp);
 
   let description = response.data.weather[0].description;
   let weatherDescription = document.querySelector("#weather-description");
@@ -56,6 +58,8 @@ function showMyData(response) {
 console.log(`${apiUrl}&appid=${apiKey}`);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showMyData);
 
+let farhenheitTemp = null;
+
 //search box form
 function searchForCity(event) {
   event.preventDefault();
@@ -65,11 +69,14 @@ function searchForCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=${units}&appid=${apiKey}`;
   axios.get(`${apiUrl}`).then(displayWeatherData);
 }
+
 //display weather update
 function displayWeatherData(response) {
   let updatedTemp = document.querySelector("#main-temp");
   let temperature = Math.round(response.data.main.temp);
-  updatedTemp.innerHTML = `${temperature}°F`;
+  updatedTemp.innerHTML = `${temperature}`;
+
+  farhenheitTemp = Math.round(response.data.main.temp);
 
   let searchedCity = document.querySelector("#city-text");
   let city = response.data.name;
@@ -99,3 +106,21 @@ function displayWeatherData(response) {
 //search button submission
 let submitCity = document.querySelector("#search-box-form");
 submitCity.addEventListener("submit", searchForCity);
+
+//unit conversion links
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let celsiusTemp = (farhenheitTemp - 32) * (5 / 9);
+  let temperature = document.querySelector("#main-temp");
+  temperature.innerHTML = Math.round(celsiusTemp);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+function showFarhenheitTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#main-temp");
+  temperature.innerHTML = farhenheitTemp;
+}
+let farhenheitLink = document.querySelector("#fahrenheit-link");
+farhenheitLink.addEventListener("click", showFarhenheitTemp);

@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 button {
   background: #364547;
@@ -7,11 +8,11 @@ button {
   border-radius: 30px;
   color: lightgray;
   padding: 10px 30px;
-  font-family: "Open Sans Condensed", sans-serif;
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 button:hover {
-  background: #979797;
+  /*background: #979797;*/
+  background: rgba(180, 110, 180, 0.5);
   color: #364547;
   font-weight: bold;
 }
@@ -20,11 +21,7 @@ input {
   border: 4px solid #364547;
   border-radius: 30px;
   padding: 10px 15px;
-  font-family: "Open Sans Condensed", sans-serif;
   width: 550px;
-}
-footer {
-  font-family: "Open Sans Condensed", sans-serif;
 }
 li {
   list-style: none;
@@ -34,7 +31,8 @@ ul {
   padding: 0px;
 }
 .container {
-  background: linear-gradient(darkgray, lightgray, white);
+  background: linear-gradient(rgb(226, 115, 226), pink, rgb(156, 156, 250));
+  /*background: linear-gradient(darkgray, lightgray, white);*/
   border-radius: 30px;
   border: 5px solid #364547;
   margin-top: 75px;
@@ -47,7 +45,6 @@ ul {
 
 .main-temp {
   color: #364547;
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 70px;
   font-weight: bold;
   padding: 0px 0px;
@@ -56,9 +53,10 @@ ul {
   /*font-size: 70px;
   color: #364547;*/
   padding: 5px 0px;
+  position: relative;
+  right: 10px;
 }
 .other-text {
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
   text-align: right;
   color: #364547;
@@ -69,24 +67,33 @@ ul {
   color: #979797;
 }*/
 .phoenix-text {
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 40px;
   color: #364547;
   padding: 0px 0px;
   text-align: left;
 }
+.units {
+  position: relative;
+  top: 23px;
+  right: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0px;
+  color: #364547;
+  text-align: right;
+}
 .weather-box {
   border: 2px solid #364547;
   border-radius: 10px;
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 18px;
   max-height: 150px;
   color: #364547;
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 .weather-box:hover {
   /*background: #979797;*/
-  background: lightgrey;
+  /*background: lightgrey;*/
+  background: rgba(180, 110, 180, 0.5);
 }
 .weather-box-icon {
   color: #364547;
@@ -94,7 +101,17 @@ ul {
 }
 #date-text,
 #weather-description {
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
   text-transform: capitalize;
+}
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+  color: #364547;
+}
+#fahrenheit-link:hover {
+  color: rgb(180, 110, 180);
+}
+#celsius-link:hover {
+  color: rgb(180, 110, 180);
 }
