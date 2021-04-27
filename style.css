@@ -50,10 +50,12 @@ ul {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 70px;
   font-weight: bold;
+  padding: 0px 0px;
 }
 .main-weather-icon {
-  font-size: 70px;
-  color: #364547;
+  /*font-size: 70px;
+  color: #364547;*/
+  padding: 5px 0px;
 }
 .other-text {
   font-family: "Open Sans Condensed", sans-serif;
@@ -94,4 +96,5 @@ ul {
 #weather-description {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
+  text-transform: capitalize;
 }
