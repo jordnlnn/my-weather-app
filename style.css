@@ -3,22 +3,22 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
 }
 button {
-  background: #364547;
-  border: 4px solid #364547;
+  background: rgb(100, 68, 100);
+  border: 4px solid rgb(100, 68, 100);
   border-radius: 30px;
   color: lightgray;
   padding: 10px 30px;
   transition: all 200ms ease-in-out;
 }
 button:hover {
-  /*background: #979797;*/
-  background: rgba(180, 110, 180, 0.5);
-  color: #364547;
-  font-weight: bold;
+  background: rgba(100, 68, 100, 0.6);
+  border: 4px solid rgb(100, 68, 100);
+  color: lightgray;
 }
 
 input {
-  border: 4px solid #364547;
+  border: 4px solid rgb(100, 68, 100);
+  background: rgba(228, 228, 245, 0.7);
   border-radius: 30px;
   padding: 10px 15px;
   width: 550px;
@@ -32,26 +32,23 @@ ul {
 }
 .container {
   background: linear-gradient(rgb(226, 115, 226), pink, rgb(156, 156, 250));
-  /*background: linear-gradient(darkgray, lightgray, white);*/
   border-radius: 30px;
-  border: 5px solid #364547;
+  border: 5px solid rgb(100, 68, 100);
   margin-top: 75px;
   max-width: 850px;
   padding: 50px 40px;
 }
 .search-box {
-  text-align: right;
+  text-align: center;
 }
 
 .main-temp {
-  color: #364547;
+  color: rgb(100, 68, 100);
   font-size: 70px;
   font-weight: bold;
   padding: 0px 0px;
 }
 .main-weather-icon {
-  /*font-size: 70px;
-  color: #364547;*/
   padding: 5px 0px;
   position: relative;
   right: 10px;
@@ -59,16 +56,13 @@ ul {
 .other-text {
   font-size: 22px;
   text-align: right;
-  color: #364547;
+  color: rgb(100, 68, 100);
   margin-top: 18px;
   transition: all 300ms ease-in-out;
 }
-/*.other-text:hover {
-  color: #979797;
-}*/
 .phoenix-text {
   font-size: 40px;
-  color: #364547;
+  color: rgb(100, 68, 100);
   padding: 0px 0px;
   text-align: left;
 }
@@ -79,26 +73,21 @@ ul {
   font-size: 18px;
   font-weight: bold;
   padding: 0px;
-  color: #364547;
+  color: rgb(100, 68, 100);
   text-align: right;
 }
 .weather-box {
-  border: 1px solid #364547;
-  border-radius: 10px;
+  border: 1px solid rgba(153, 87, 153, 0.2);
+  border-radius: 20px;
   font-size: 18px;
   max-height: 150px;
-  color: #364547;
+  color: rgb(100, 68, 100);
   transition: all 200ms ease-in-out;
 }
 .weather-box:hover {
-  /*background: #979797;*/
-  /*background: lightgrey;*/
-  background: rgba(180, 110, 180, 0.5);
+  background: rgba(153, 87, 153, 0.2);
 }
-.weather-box-icon {
-  color: #364547;
-  font-size: 50px;
-}
+
 #date-text,
 #weather-description {
   font-size: 22px;
@@ -107,11 +96,17 @@ ul {
 #celsius-link,
 #fahrenheit-link {
   text-decoration: none;
-  color: #364547;
+  color: rgb(100, 68, 100);
 }
 #fahrenheit-link:hover {
   color: rgb(180, 110, 180);
 }
 #celsius-link:hover {
   color: rgb(180, 110, 180);
+}
+.forecast-day {
+  font-size: 25px;
+}
+.forecast-icons {
+  width: 60px;
 }
