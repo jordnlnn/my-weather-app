@@ -30,6 +30,17 @@ let apiKey = "974867647183f192d10e0478c4341263";
 let myCity = "Phoenix";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${myCity}&units=imperial`;
 
+//forecast data
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function showForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function showMyData(response) {
   let temperature = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#main-temp");
@@ -54,8 +65,9 @@ function showMyData(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
-console.log(`${apiUrl}&appid=${apiKey}`);
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showMyData);
 
 let farhenheitTemp = null;
@@ -102,6 +114,8 @@ function displayWeatherData(response) {
 
   let dateElement = document.querySelector("#date-text");
   dateElement.innerHTML = displayDateTime(now);
+
+  getForecast(response.data.coord);
 }
 //search button submission
 let submitCity = document.querySelector("#search-box-form");
@@ -124,3 +138,33 @@ function showFarhenheitTemp(event) {
 }
 let farhenheitLink = document.querySelector("#fahrenheit-link");
 farhenheitLink.addEventListener("click", showFarhenheitTemp);
+
+//forecast data
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2 weather-box" id="forecast-box">
+          <div class="forecast-day">${showForecastDay(forecastDay.dt)}</div>
+          <img src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png">
+          <div class="forecast-temp">
+            <span class="forecast-temp-max"><strong>${Math.round(
+              forecastDay.temp.max
+            )}</strong></span>
+            <span class="forecast-temp-min">${Math.round(
+              forecastDay.temp.min
+            )}</span>
+          </div>
+        </div>
+      `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}

@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row">
         <!--search box div-->
-        <div class="col-12 search-box">
+        <div class="col-12 search-box mb-2">
           <form id="search-box-form">
             <input
               type="text"
@@ -56,7 +56,6 @@
         </div>
         <!--weather icon with temp-->
         <div class="col-1 main-weather-icon">
-          <!--<i class="fas fa-sun main-weather-icon"></i>-->
           <img src="" />
         </div>
         <div class="col-2 main-temp" id="main-temp"></div>
@@ -69,69 +68,29 @@
         <!--other text on right side-->
         <div class="col-4 other-text">
           <ul>
-            <li id="precipitation">Precipitation: 0%</li>
+            <li></li>
+            <br />
             <li id="humidity">Humidity: 21%</li>
             <li id="wind">Wind: 12 mph</li>
           </ul>
         </div>
       </div>
 
-      <!--Other text, precipitation, wind, humidity-->
-      <!-- 
+      <!--forecast boxes-->
+      <div id="forecast">
+        <!--
       <div class="row">
-         
-          <div class="col-4 other-text" id="precipitation">
-          Precipitation:<br />
-          0%
-        </div>
-        <div class="col-4 other-text">
-          Humidity:<br />
-          21%
-        </div>
-        <div class="col-4 other-text">
-          Wind:<br />
-          12 mph
-        </div></div>
-      -->
-
-      <div class="row">
-        <!--Weather box divs-->
-        <div class="col-2 weather-box">
-          wed<br />
-          95°<br />
+        <div class="col-2 weather-box" id="forecast-box">
+          <div class="forecast-day">wed</div>
           <br />
           <i class="fas fa-sun weather-box-icon"></i><br />
+          <div class="forecast-temp">
+            <span class="forecast-temp-max"><strong>95°</strong></span>
+            <span class="forecast-temp-min"> 87°</span>
+          </div>
         </div>
-        <div class="col-2 weather-box">
-          thu<br />
-          93°<br />
-          <br />
-          <i class="fas fa-sun weather-box-icon"></i><br />
-        </div>
-        <div class="col-2 weather-box">
-          fri<br />
-          97°<br />
-          <br />
-          <i class="fas fa-sun weather-box-icon"></i><br />
-        </div>
-        <div class="col-2 weather-box">
-          sat<br />
-          99°<br />
-          <br />
-          <i class="fas fa-cloud-sun weather-box-icon"></i>
-        </div>
-        <div class="col-2 weather-box">
-          sun<br />
-          99°<br />
-          <br />
-          <i class="fas fa-cloud-sun weather-box-icon"></i>
-        </div>
-        <div class="col-2 weather-box">
-          mon<br />
-          99°<br />
-          <br />
-          <i class="fas fa-cloud-sun weather-box-icon"></i>
-        </div>
+      </div>
+-->
       </div>
     </div>
     <script src="app.js"></script>
