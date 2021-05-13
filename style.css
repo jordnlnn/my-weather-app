@@ -42,16 +42,23 @@ ul {
   text-align: center;
 }
 
+.middle-icon-temp {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
 .main-temp {
   color: rgb(100, 68, 100);
   font-size: 70px;
   font-weight: bold;
   padding: 0px 0px;
+  margin: 0;
 }
 .main-weather-icon {
   padding: 5px 0px;
+  margin: 0;
   position: relative;
-  right: 10px;
 }
 .other-text {
   font-size: 22px;
@@ -69,7 +76,7 @@ ul {
 .units {
   position: relative;
   top: 23px;
-  right: 30px;
+  left: 20px;
   font-size: 18px;
   font-weight: bold;
   padding: 0px;
@@ -109,4 +116,87 @@ ul {
 }
 .forecast-icons {
   width: 60px;
+}
+@media (max-width: 500px) {
+  .search-box {
+    padding: 0;
+    font-size: 12px;
+  }
+  .search-box input {
+    width: 155px;
+  }
+  .search-box button {
+    width: 75px;
+    margin: 0;
+    padding: 10px;
+  }
+  .weather-box {
+    flex-wrap: wrap;
+    width: 120px;
+    align-items: center;
+  }
+  #humidity,
+  #wind,
+  #weather-description,
+  #date-text {
+    font-size: 15px;
+  }
+  #city-text {
+    font-size: 30px;
+  }
+}
+@media (max-width: 740px) {
+  input {
+    width: 400px;
+  }
+  .middle-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .other-text {
+    text-align: center;
+  }
+  .phoenix-text {
+    text-align: center;
+    position: relative;
+    top: 30px;
+  }
+  .middle-icon-temp {
+    position: relative;
+    top: 30px;
+  }
+}
+
+@media (max-width: 540px) {
+  input {
+    width: 275px;
+  }
+  .middle-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .container {
+    height: 100vh;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    height: 1000px;
+    margin: 0;
+  }
+  .phoenix-text,
+  .other-text {
+    text-align: center;
+    position: relative;
+    left: 100px;
+  }
+  #forecast {
+    position: relative;
+    left: 30px;
+  }
+  .units span {
+    display: flex;
+    flex-direction: row;
+  }
 }
